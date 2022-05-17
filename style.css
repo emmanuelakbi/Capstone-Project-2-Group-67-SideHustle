@@ -252,6 +252,16 @@ header {
   right: 0;
 }
 
+.input-field i.errorIcon.firstPass {
+  visibility: hidden;
+  right: 10%;
+}
+
+.input-field i.successIcon.firstPass {
+  visibility: hidden;
+  right: 10%;
+}
+
 .input-field input:is(:focus, :valid) {
   border-bottom-color: #0088a9;
 }

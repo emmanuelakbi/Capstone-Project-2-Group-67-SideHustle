@@ -36,7 +36,7 @@ passShowEye.forEach((eyeIcon) => {
 });
 
 // Form Validation
-const form = document.getElementById("from");
+const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const number = document.getElementById("number");
@@ -64,15 +64,54 @@ function checkInputs() {
     // add success class
     setSuccessFor(username);
   }
+
+  if (emailValue === "") {
+    setErrorFor(email, "Email cannot be blank");
+  } else if (!isEmail(emailValue)) {
+    setErrorFor(email, "Email is not valid");
+  } else {
+    setSuccessFor(email);
+  }
+
+  if (numberValue === "") {
+    setErrorFor(number, "Phone Number cannot be blank");
+  } else {
+    setSuccessFor(number);
+  }
+
+  if (passwordValue === "") {
+    setErrorFor(password, "Password cannot be blank");
+  } else {
+    setSuccessFor(password);
+  }
+
+  if (password2Value === "") {
+    setErrorFor(password2, "Password cannot be blank");
+  } else if (passwordValue !== password2Value) {
+    setErrorFor(password2, "Passwords does not match");
+  } else {
+    setSuccessFor(password2);
+  }
 }
 
 function setErrorFor(input, message) {
-  const formControl = input.parentElement; // .input-field
-  const small = formControl.querySelector("small");
-
-  // Add error class
-  formControl.className = "input-field error";
+  const inputField = input.parentElement; // .input-field
+  const small = inputField.querySelector("small");
 
   // Add Error message inside Small HTML TAG
   small.innerText = message;
+
+  // Add error class
+  inputField.className = "input-field error";
+}
+
+function setSuccessFor(input) {
+  const inputField = input.parentElement;
+  inputField.className = "input-field success";
+}
+
+function isEmail(email) {
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+    email
+  );
 }
