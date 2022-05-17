@@ -1,4 +1,6 @@
-// Navigation
+// =================== //
+// NavBar              //
+// =================== //
 const menuOpen = document.querySelector(".menu");
 const menuClose = document.querySelector(".close");
 const overlay = document.querySelector(".overlay");
@@ -11,7 +13,9 @@ menuClose.addEventListener("click", () => {
   overlay.classList.remove("overlay--active");
 });
 
-// Form
+// =================== //
+// FORM EYE ICON       //
+// =================== //
 const container = document.querySelector(".container"),
   passShowEye = document.querySelectorAll(".showEye"),
   passFields = document.querySelectorAll(".password");
@@ -35,7 +39,9 @@ passShowEye.forEach((eyeIcon) => {
   });
 });
 
-// Form Validation
+// =================== //
+// FORM VALIDATION     //
+// =================== //
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
@@ -45,7 +51,6 @@ const password2 = document.getElementById("password2");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
   checkInputs();
 });
 

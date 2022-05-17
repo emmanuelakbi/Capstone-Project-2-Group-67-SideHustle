@@ -1,5 +1,11 @@
+/* =================== */
+/* Google Fonts  */
+/* =================== */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
+/* =================== */
+/* Default Setup  */
+/* =================== */
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #24252a;
@@ -14,6 +20,10 @@ body {
   color: #edf0f1;
   text-decoration: none;
 }
+
+/* =================== */
+/* NavBar  */
+/* =================== */
 
 header {
   color: #edf0f1;
@@ -68,6 +78,10 @@ header {
 .menu {
   display: none;
 }
+
+/* =================== */
+/* Responsive NavBar for Mobile and Tablets */
+/* =================== */
 
 .menu-btn {
   font-size: 30px;
@@ -199,7 +213,6 @@ header {
 }
 
 .dform .input-field {
-  /* background-color: red; */
   border-radius: 5px;
   position: relative;
   height: 50px;
@@ -219,12 +232,11 @@ header {
   transition: all 0.2s ease;
 }
 
-/* INPUT SUCCESS */
-.input-field.success input {
+.input-field.success input:is(:focus, :valid) {
   border-bottom-color: #2ecc71;
 }
 
-.input-field.error input {
+.input-field.error input:is(:focus, :valid) {
   border-bottom-color: #e74c3c;
 }
 
@@ -234,14 +246,11 @@ header {
   top: 100%;
 }
 
-/* SMALL SUCCESS and ERROR */
-
 .input-field.error small {
   visibility: visible;
   color: #e74c3c;
 }
 
-/* ERROR and SUCCESS VISIBILITY */
 .input-field i.errorIcon {
   visibility: hidden;
   right: 0;
@@ -275,7 +284,6 @@ header {
   transition: all 0.2s ease;
 }
 
-/* ICON SUCCESS and ERROR */
 .input-field.success i.successIcon {
   visibility: visible;
   color: #2ecc71;
