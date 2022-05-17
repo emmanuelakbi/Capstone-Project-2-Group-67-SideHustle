@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #24252a;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+header {
+  color: #edf0f1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.logo {
+  cursor: pointer;
+  margin-right: auto;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav__links {
+  list-style: none;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #0088a9;
+}
+
+.cta {
+  margin: 0 0 20px 20px;
+  padding: 9px 25px;
+  color: #fff;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.cta:hover {
+  color: #ffffff;
+  background-color: rgba(0, 136, 169, 0.3);
+}
+
+/* Mobile Nav on Desktop */
+
+.menu {
+  display: none;
+}
+
+.menu-btn {
+  font-size: 30px;
+  cursor: pointer;
+  border: 2px dotted #ffffff;
+  border-radius: 5px;
+  padding: 3px 8px;
+  transition: all 0.3s ease 0s;
+}
+
+.menu-btn:hover {
+  font-size: 30px;
+  cursor: pointer;
+  color: #0088a9;
+  border: 2px solid #0088a9;
+  border-radius: 5px;
+  padding: 3px 8px;
+}
+
+.close {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: #24252a;
+  overflow-x: hidden;
+  transition: width 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #0088a9;
+}
+
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+  .menu {
+    display: initial;
+  }
+}
+
+/* =================== */
+/* Form Design  */
+/* =================== */
+
+.form__section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 136, 169, 0.3);
+}
+
+.container .dform {
+  padding: 30px;
+}
+
+.container .dform .title {
+  position: relative;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.dform .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background-color: #0088a9;
+  border-radius: 25px;
+}
+
+.dform .input-field {
+  /* background-color: red; */
+  border-radius: 5px;
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.input-field input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* INPUT SUCCESS */
+.input-field.success input {
+  border-bottom-color: #2ecc71;
+}
+
+.input-field.error input {
+  border-bottom-color: #e74c3c;
+}
+
+.input-field small {
+  visibility: hidden;
+  position: relative;
+  top: 100%;
+}
+
+/* SMALL SUCCESS and ERROR */
+
+.input-field.error small {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+/* ERROR and SUCCESS VISIBILITY */
+.input-field i.errorIcon {
+  visibility: hidden;
+  right: 0;
+}
+
+.input-field i.successIcon {
+  visibility: hidden;
+  right: 0;
+}
+
+.input-field input:is(:focus, :valid) {
+  border-bottom-color: #0088a9;
+}
+
+.input-field i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 23px;
+  transition: all 0.2s ease;
+}
+
+/* ICON SUCCESS and ERROR */
+.input-field.success i.successIcon {
+  visibility: visible;
+  color: #2ecc71;
+}
+
+.input-field.error i.errorIcon {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+.input-field input:is(:focus, :valid) ~ i {
+  color: #0088a9;
+}
+
+.input-field i.icon {
+  left: 0;
+}
+
+.input-field i.showEye {
+  right: 0;
+}
+
+.dform .checkbox-text {
+  margin-top: 40px;
+}
+
+.checkbox-content input {
+  accent-color: rgba(0, 136, 169, 1);
+}
+
+.checkbox-content,
+legend,
+fieldset {
+  font-size: 17px;
+}
+
+fieldset {
+  color: #333;
+}
+
+.dform .button input {
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background-color: #0088a9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button input:hover {
+  background-color: #036078;
+}
